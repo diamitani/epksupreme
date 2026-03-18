@@ -60,20 +60,20 @@ export default async function GalleryPage() {
           </Card>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {epks.map((epk) => (
+            {epks.map((epk: any) => (
               <Card key={epk.id} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-start justify-between mb-2">
                     <CardTitle className="text-xl">
-                      {(epk.public_profile as any)?.artist_name || 'Artist'}
+                      {epk.public_profile?.artist_name || 'Artist'}
                     </CardTitle>
                     <Badge variant="secondary">
-                      {(epk.public_profile as any)?.genre || 'Music'}
+                      {epk.public_profile?.genre || 'Music'}
                     </Badge>
                   </div>
                   <CardDescription>
-                    {(epk.biography as any)?.one_liner ||
-                      (epk.biography as any)?.short ||
+                    {epk.biography?.one_liner ||
+                      epk.biography?.short ||
                       'Professional electronic press kit'}
                   </CardDescription>
                 </CardHeader>

@@ -6,7 +6,8 @@ import { nanoid } from 'nanoid'
 
 export async function POST(request: NextRequest) {
   try {
-    const supabase = await createClient()
+    const supabaseClient = await createClient()
+    const supabase = supabaseClient as any // Type assertion to bypass strict Supabase typing
 
     // Check authentication
     const {
@@ -21,9 +22,9 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
 
     // Create submission
-    const { data: submission, error: submissionError } = await supabase
+    const { data: submission, error: submissionError } = await (supabase
       .from('submissions')
-      .insert({
+      .insert as any)({
         user_id: user.id,
         artist_name: body.artist_name,
         genre: body.genre,
@@ -79,9 +80,9 @@ export async function POST(request: NextRequest) {
     // Create EPK record
     const slug = `${generateSlug(body.artist_name)}-${nanoid(6)}`
 
-    const { data: epk, error: epkError } = await supabase
+    const { data: epk, error: epkError } = await (supabase
       .from('epks')
-      .insert({
+      .insert as any)({
         submission_id: submission.id,
         user_id: user.id,
         slug,

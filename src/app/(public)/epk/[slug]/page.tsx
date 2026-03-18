@@ -24,19 +24,16 @@ export default async function EPKPage({ params }: PageProps) {
     notFound()
   }
 
-  // Increment view count
-  await supabase
-    .from('epks')
-    .update({ views_count: epk.views_count + 1 })
-    .eq('id', epk.id)
+  // Type assertion for EPK data
+  const epkData = epk as any
 
   // Select template
-  const template = epk.template || 'cinematic'
+  const template = epkData.template || 'cinematic'
 
   if (template === 'editorial') {
-    return <EditorialTemplate epk={epk} />
+    return <EditorialTemplate epk={epkData} />
   }
 
   // Default to cinematic
-  return <CinematicTemplate epk={epk} />
+  return <CinematicTemplate epk={epkData} />
 }

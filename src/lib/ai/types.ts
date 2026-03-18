@@ -55,8 +55,10 @@ export interface EPKData {
   }
   one_sheet?: {
     headline: string
+    tagline?: string
     bio: string
-    key_facts: string[]
+    key_facts: Array<{ label: string; value: string }> | string[]
+    highlights?: string[]
     press_quotes: string[]
   }
   engagement_score?: {
