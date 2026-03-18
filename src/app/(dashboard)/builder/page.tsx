@@ -2,11 +2,13 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Music, Loader2 } from 'lucide-react'
+import { ArtistpreneurLogo } from '@/components/ui/logo'
+import { Music, Loader2, Sparkles } from 'lucide-react'
 import toast from 'react-hot-toast'
 
 export default function BuilderPage() {
@@ -67,30 +69,35 @@ export default function BuilderPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
       {/* Header */}
-      <header className="border-b">
+      <header className="border-b border-purple-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Music className="h-6 w-6" />
-            <span className="text-xl font-bold">EPK Supreme</span>
-          </div>
+          <Link href="/dashboard" className="flex items-center gap-3">
+            <ArtistpreneurLogo className="h-8" />
+          </Link>
         </div>
       </header>
 
       <div className="container mx-auto px-4 py-8 max-w-4xl">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Create Your EPK</h1>
-          <p className="text-muted-foreground">
+        <div className="mb-8 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-700 rounded-full mb-4 text-sm font-medium">
+            <Sparkles className="h-4 w-4" />
+            AI-Powered EPK Builder
+          </div>
+          <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            Create Your EPK
+          </h1>
+          <p className="text-gray-600">
             Our AI will generate a professional press kit based on your information
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Basic Info */}
-          <Card>
+          <Card className="border-purple-100">
             <CardHeader>
-              <CardTitle>Basic Information</CardTitle>
+              <CardTitle className="text-purple-900">Basic Information</CardTitle>
               <CardDescription>Tell us about yourself or your act</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -159,9 +166,9 @@ export default function BuilderPage() {
           </Card>
 
           {/* Bio Inputs */}
-          <Card>
+          <Card className="border-purple-100">
             <CardHeader>
-              <CardTitle>Your Story</CardTitle>
+              <CardTitle className="text-purple-900">Your Story</CardTitle>
               <CardDescription>Help our AI write your bio</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -251,9 +258,9 @@ export default function BuilderPage() {
           </Card>
 
           {/* Social Links */}
-          <Card>
+          <Card className="border-purple-100">
             <CardHeader>
-              <CardTitle>Social & Music Links</CardTitle>
+              <CardTitle className="text-purple-900">Social & Music Links</CardTitle>
               <CardDescription>Where can people find your music?</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -348,17 +355,25 @@ export default function BuilderPage() {
               variant="outline"
               onClick={() => router.push('/dashboard')}
               disabled={loading}
+              className="border-purple-300"
             >
               Cancel
             </Button>
-            <Button type="submit" disabled={loading} className="flex-1">
+            <Button
+              type="submit"
+              disabled={loading}
+              className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+            >
               {loading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Building your EPK...
+                  Building your EPK with AI...
                 </>
               ) : (
-                'Generate EPK with AI'
+                <>
+                  <Sparkles className="mr-2 h-4 w-4" />
+                  Generate EPK with AI
+                </>
               )}
             </Button>
           </div>

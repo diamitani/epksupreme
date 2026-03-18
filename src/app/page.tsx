@@ -1,24 +1,29 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Music, Zap, Globe, BarChart3, CheckCircle } from 'lucide-react'
+import { ArtistpreneurLogo } from '@/components/ui/logo'
+import { Music, Zap, Globe, BarChart3, CheckCircle, Sparkles } from 'lucide-react'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
       {/* Header */}
-      <header className="border-b">
+      <header className="border-b border-purple-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Music className="h-6 w-6" />
-            <span className="text-xl font-bold">EPK Supreme</span>
-          </div>
+          <Link href="/" className="flex items-center gap-3">
+            <ArtistpreneurLogo className="h-8" />
+          </Link>
           <nav className="flex items-center gap-4">
+            <Link href="/gallery">
+              <Button variant="ghost" className="text-purple-700 hover:text-purple-900">Examples</Button>
+            </Link>
             <Link href="/login">
-              <Button variant="ghost">Login</Button>
+              <Button variant="ghost" className="text-purple-700 hover:text-purple-900">Login</Button>
             </Link>
             <Link href="/signup">
-              <Button>Get Started</Button>
+              <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
+                Get Started
+              </Button>
             </Link>
           </nav>
         </div>
@@ -26,23 +31,30 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="container mx-auto px-4 py-20 text-center">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-700 rounded-full mb-6 text-sm font-medium">
+          <Sparkles className="h-4 w-4" />
+          Powered by Multi-Agent AI
+        </div>
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
           Professional Press Kits
           <br />
-          <span className="text-primary">Built by AI in Minutes</span>
+          <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            Built by AI in Minutes
+          </span>
         </h1>
-        <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+        <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
           EPK Supreme uses multi-agent AI to create stunning, professional electronic press kits
           that get you booked and covered by press.
         </p>
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-4 justify-center flex-wrap">
           <Link href="/signup">
-            <Button size="lg">
+            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-lg px-8 py-6 shadow-lg shadow-purple-500/30">
               Create Your EPK
+              <Sparkles className="ml-2 h-5 w-5" />
             </Button>
           </Link>
           <Link href="/gallery">
-            <Button size="lg" variant="outline">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-purple-300 hover:bg-purple-50">
               View Examples
             </Button>
           </Link>
@@ -51,42 +63,55 @@ export default function HomePage() {
 
       {/* Features */}
       <section className="container mx-auto px-4 py-20">
-        <h2 className="text-3xl font-bold text-center mb-12">Everything You Need to Stand Out</h2>
+        <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+          Everything You Need to Stand Out
+        </h2>
+        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Professional tools that help you get discovered, booked, and covered
+        </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card>
+          <Card className="border-purple-100 hover:border-purple-300 transition-colors hover:shadow-lg">
             <CardHeader>
-              <Zap className="h-10 w-10 mb-2 text-primary" />
-              <CardTitle>AI-Powered</CardTitle>
+              <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center mb-3">
+                <Zap className="h-6 w-6 text-white" />
+              </div>
+              <CardTitle className="text-purple-900">AI-Powered</CardTitle>
               <CardDescription>
                 Multi-agent AI writes your bio, creates your brand, and designs your press kit
               </CardDescription>
             </CardHeader>
           </Card>
 
-          <Card>
+          <Card className="border-purple-100 hover:border-purple-300 transition-colors hover:shadow-lg">
             <CardHeader>
-              <Globe className="h-10 w-10 mb-2 text-primary" />
-              <CardTitle>Live & Shareable</CardTitle>
+              <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center mb-3">
+                <Globe className="h-6 w-6 text-white" />
+              </div>
+              <CardTitle className="text-purple-900">Live & Shareable</CardTitle>
               <CardDescription>
                 Get a hosted website and shareable link. Update anytime, no reprints needed
               </CardDescription>
             </CardHeader>
           </Card>
 
-          <Card>
+          <Card className="border-purple-100 hover:border-purple-300 transition-colors hover:shadow-lg">
             <CardHeader>
-              <BarChart3 className="h-10 w-10 mb-2 text-primary" />
-              <CardTitle>Track Everything</CardTitle>
+              <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center mb-3">
+                <BarChart3 className="h-6 w-6 text-white" />
+              </div>
+              <CardTitle className="text-purple-900">Track Everything</CardTitle>
               <CardDescription>
                 See who views your EPK, what they click, and when to follow up
               </CardDescription>
             </CardHeader>
           </Card>
 
-          <Card>
+          <Card className="border-purple-100 hover:border-purple-300 transition-colors hover:shadow-lg">
             <CardHeader>
-              <CheckCircle className="h-10 w-10 mb-2 text-primary" />
-              <CardTitle>PDF Export</CardTitle>
+              <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-3">
+                <CheckCircle className="h-6 w-6 text-white" />
+              </div>
+              <CardTitle className="text-purple-900">PDF Export</CardTitle>
               <CardDescription>
                 Download a professional one-sheet press kit for email and print
               </CardDescription>
@@ -197,24 +222,27 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary text-primary-foreground py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4">Ready to Get Booked?</h2>
-          <p className="text-xl mb-8 opacity-90">
+      <section className="relative overflow-hidden py-20 bg-gradient-to-r from-purple-600 to-blue-600">
+        <div className="absolute inset-0 bg-grid-white/10"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Ready to Get Booked?</h2>
+          <p className="text-xl mb-8 text-purple-100 max-w-2xl mx-auto">
             Join hundreds of artists creating professional press kits with AI
           </p>
           <Link href="/signup">
-            <Button size="lg" variant="secondary">
+            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8 py-6 shadow-xl">
               Create Your EPK Now
+              <Sparkles className="ml-2 h-5 w-5" />
             </Button>
           </Link>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t py-12">
-        <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>&copy; 2026 EPK Supreme. All rights reserved.</p>
+      <footer className="border-t border-purple-100 py-12 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <ArtistpreneurLogo className="h-8 mx-auto mb-4" />
+          <p className="text-gray-600">&copy; 2026 Artistpreneur EPK Supreme. All rights reserved.</p>
         </div>
       </footer>
     </div>

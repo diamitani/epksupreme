@@ -1,0 +1,87 @@
+🚀 EPK SUPREME - DEPLOY TO VERCEL NOW
+
+Your code is ready! Just opened Vercel for you.
+
+═══════════════════════════════════════════════════════════
+
+STEP 1: DEPLOY TO VERCEL (Just opened in your browser!)
+─────────────────────────────────────────────────────────
+1. Log in to Vercel (if needed)
+2. Click "Import" next to your epksupreme repository
+3. Click "Deploy" - DON'T add environment variables yet!
+
+═══════════════════════════════════════════════════════════
+
+STEP 2: ADD ENVIRONMENT VARIABLES
+─────────────────────────────────────────────────────────
+After initial deployment, go to your project → Settings → Environment Variables
+
+Add these (copy/paste):
+
+NEXT_PUBLIC_SUPABASE_URL
+https://ikddseyrditiuleapanq.supabase.co
+
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlrZGRzZXlyZGl0aXVsZWFwYW5xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxMTE2MDksImV4cCI6MjA4ODY4NzYwOX0.P1-ocFd-EOt9-dm4iPYMe70C9Ly7_685UynQO6pMUyg
+
+SUPABASE_SERVICE_ROLE_KEY
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlrZGRzZXlyZGl0aXVsZWFwYW5xIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MzExMTYwOSwiZXhwIjoyMDg4Njg3NjA5fQ.AwaMDh14IUfJry06VPfyZPM2bHlLx9YIzEOos9Uk58o
+
+DEEPSEEK_API_KEY
+sk-a5b7d0dc13754585b28d6704b65afae0
+
+MODEL_PROVIDER
+deepseek
+
+DEEPSEEK_BASE_URL
+https://api.deepseek.com/v1
+
+DEEPSEEK_MODEL
+deepseek-chat
+
+NEXT_PUBLIC_APP_NAME
+EPK Supreme
+
+═══════════════════════════════════════════════════════════
+
+STEP 3: REDEPLOY
+─────────────────────────────────────────────────────────
+After adding environment variables:
+- Go to Deployments tab
+- Click "Redeploy" on the latest deployment
+
+═══════════════════════════════════════════════════════════
+
+STEP 4: UPDATE SUPABASE URLS
+─────────────────────────────────────────────────────────
+Once deployed, you'll get a URL like: https://epksupreme-xyz.vercel.app
+
+1. Go to: https://supabase.com/dashboard/project/ikddseyrditiuleapanq/auth/url-configuration
+2. Set Site URL to: your-vercel-url
+3. Add Redirect URL: your-vercel-url/**
+
+═══════════════════════════════════════════════════════════
+
+STEP 5: RUN DATABASE SCHEMA
+─────────────────────────────────────────────────────────
+1. Go to: https://supabase.com/dashboard/project/ikddseyrditiuleapanq/editor
+2. Click "New Query"
+3. Open ~/Desktop/epk-supreme/supabase/schema.sql
+4. Copy entire contents and paste
+5. Click RUN
+
+═══════════════════════════════════════════════════════════
+
+✅ YOUR EPK SUPREME WILL BE LIVE!
+
+Your link will be something like:
+https://epksupreme-diamitani.vercel.app
+
+Test it:
+1. Click "Get Started"
+2. Create account
+3. Fill out EPK builder
+4. Wait ~30 seconds
+5. See your AI-generated EPK! 🎵
+
+═══════════════════════════════════════════════════════════
