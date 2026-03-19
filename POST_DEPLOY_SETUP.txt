@@ -1,0 +1,87 @@
+🚀 POST-DEPLOYMENT SETUP (CRITICAL!)
+
+After your Vercel deployment finishes, do these steps:
+
+═══════════════════════════════════════════════════════════
+
+STEP 1: GET YOUR VERCEL URL
+─────────────────────────────────────────────────────────
+After deployment completes, copy your URL from Vercel.
+Should look like: https://epksupreme-xyz.vercel.app
+
+═══════════════════════════════════════════════════════════
+
+STEP 2: UPDATE SUPABASE REDIRECT URLS (CRITICAL!)
+─────────────────────────────────────────────────────────
+🔗 Go to: https://supabase.com/dashboard/project/ikddseyrditiuleapanq/auth/url-configuration
+
+1. Set "Site URL" to your Vercel URL:
+   https://epksupreme-xyz.vercel.app
+
+2. Add to "Redirect URLs" (click + Add URL):
+   https://epksupreme-xyz.vercel.app/**
+   https://epksupreme-xyz.vercel.app/auth/callback
+
+3. Click SAVE
+
+⚠️ WITHOUT THIS, LOGIN/SIGNUP WILL NOT WORK!
+
+═══════════════════════════════════════════════════════════
+
+STEP 3: UPDATE VERCEL ENVIRONMENT VARIABLE
+─────────────────────────────────────────────────────────
+🔗 Go to: https://vercel.com/diamitani/epksupreme/settings/environment-variables
+
+Update this variable:
+NEXT_PUBLIC_APP_URL=https://your-actual-vercel-url.vercel.app
+
+Then REDEPLOY from the Deployments tab.
+
+═══════════════════════════════════════════════════════════
+
+STEP 4: TEST YOUR SITE
+─────────────────────────────────────────────────────────
+1. Go to your Vercel URL
+2. Click "Get Started"
+3. Fill out signup form
+4. Submit
+5. Check email for confirmation (if email confirmation is enabled)
+6. Log in
+7. Create an EPK!
+
+═══════════════════════════════════════════════════════════
+
+TROUBLESHOOTING
+─────────────────────────────────────────────────────────
+❌ "Invalid redirect URL" error?
+→ Check Supabase redirect URLs are set correctly
+
+❌ "Email not confirmed" error?
+→ Go to Supabase → Auth → Providers → Email
+→ Disable "Confirm email" for testing
+
+❌ Login redirects to wrong page?
+→ Check NEXT_PUBLIC_APP_URL in Vercel env vars
+
+❌ Nothing happens when clicking submit?
+→ Check browser console for errors
+→ Check Vercel function logs
+
+═══════════════════════════════════════════════════════════
+
+🎨 WHAT'S CHANGED
+─────────────────────────────────────────────────────────
+✅ Artistpreneur logo and branding
+✅ Purple & blue gradient colors
+✅ Working authentication
+✅ Colorful, engaging design
+✅ All pages styled consistently
+
+═══════════════════════════════════════════════════════════
+
+📞 NEED HELP?
+─────────────────────────────────────────────────────────
+Check UPDATES.txt for full list of changes
+Check VERCEL_DEPLOY.txt for deployment guide
+
+═══════════════════════════════════════════════════════════
