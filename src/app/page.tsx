@@ -14,8 +14,14 @@ export default function HomePage() {
             <ArtistpreneurLogo className="h-8" />
           </Link>
           <nav className="flex items-center gap-4">
-            <Link href="/gallery">
-              <Button variant="ghost" className="text-purple-700 hover:text-purple-900">Examples</Button>
+            <Link href="/about">
+              <Button variant="ghost" className="text-purple-700 hover:text-purple-900">About</Button>
+            </Link>
+            <Link href="/features">
+              <Button variant="ghost" className="text-purple-700 hover:text-purple-900">Features</Button>
+            </Link>
+            <Link href="/pricing">
+              <Button variant="ghost" className="text-purple-700 hover:text-purple-900">Pricing</Button>
             </Link>
             <Link href="/login">
               <Button variant="ghost" className="text-purple-700 hover:text-purple-900">Login</Button>
@@ -240,9 +246,39 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="border-t border-purple-100 py-12 bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <ArtistpreneurLogo className="h-8 mx-auto mb-4" />
-          <p className="text-gray-600">&copy; 2026 Artistpreneur EPK Supreme. All rights reserved.</p>
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <ArtistpreneurLogo className="h-8 mb-4" />
+              <p className="text-gray-600 text-sm">
+                Professional press kits powered by AI
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4 text-purple-900">Product</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/features" className="text-gray-600 hover:text-purple-600">Features</Link></li>
+                <li><Link href="/pricing" className="text-gray-600 hover:text-purple-600">Pricing</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4 text-purple-900">Company</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/about" className="text-gray-600 hover:text-purple-600">About</Link></li>
+                <li><Link href="/contact" className="text-gray-600 hover:text-purple-600">Contact</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4 text-purple-900">Legal</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/privacy" className="text-gray-600 hover:text-purple-600">Privacy</Link></li>
+                <li><Link href="/terms" className="text-gray-600 hover:text-purple-600">Terms</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="text-center pt-8 border-t border-purple-100">
+            <p className="text-gray-600">&copy; 2026 Artistpreneur. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>

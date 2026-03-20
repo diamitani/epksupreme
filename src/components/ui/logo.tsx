@@ -1,41 +1,24 @@
 export function ArtistpreneurLogo({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 200 60"
+      viewBox="0 0 240 60"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Gradient definitions */}
-      <defs>
-        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style={{ stopColor: '#8B5CF6', stopOpacity: 1 }} />
-          <stop offset="100%" style={{ stopColor: '#3B82F6', stopOpacity: 1 }} />
-        </linearGradient>
-      </defs>
+      {/* Three circles from Atlas branding */}
+      <circle cx="15" cy="30" r="8" fill="#82ACFC" />
+      <circle cx="30" cy="30" r="8" fill="#AB93F1" />
+      <circle cx="22.5" cy="18" r="8" fill="#82ACFC" opacity="0.7" />
 
-      {/* Icon - Musical note with entrepreneur spark */}
-      <g transform="translate(10, 10)">
-        <circle cx="15" cy="25" r="5" fill="url(#grad1)" />
-        <rect x="19" y="12" width="3" height="18" fill="url(#grad1)" rx="1.5" />
-        <path
-          d="M 22 12 Q 30 8, 32 12 L 32 22 Q 30 18, 22 22 Z"
-          fill="url(#grad1)"
-        />
-        <path
-          d="M 25 5 L 27 8 L 24 8 Z"
-          fill="#FCD34D"
-        />
-      </g>
-
-      {/* Text */}
+      {/* Artistpreneur text */}
       <text
         x="50"
-        y="35"
-        fontFamily="system-ui, -apple-system, sans-serif"
-        fontSize="24"
+        y="38"
+        fontFamily="Inter, -apple-system, sans-serif"
+        fontSize="22"
         fontWeight="700"
-        fill="url(#grad1)"
+        fill="#1A0B2E"
       >
         Artistpreneur
       </text>

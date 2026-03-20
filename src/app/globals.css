@@ -4,25 +4,26 @@
 
 @layer base {
   :root {
+    /* Atlas/Artistpreneur Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 252 71% 8%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 252 71% 8%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 262 83% 58%;
+    --popover-foreground: 252 71% 8%;
+    --primary: 252 71% 51%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 240 10% 3.9%;
-    --muted: 220 14% 96%;
+    --secondary: 231 89% 74%;
+    --secondary-foreground: 252 71% 8%;
+    --muted: 240 14% 96%;
     --muted-foreground: 240 5% 45%;
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 231 89% 74%;
+    --accent-foreground: 252 71% 8%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 262 83% 58%;
+    --ring: 252 71% 51%;
     --radius: 0.5rem;
   }
 
